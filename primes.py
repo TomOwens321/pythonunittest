@@ -5,6 +5,9 @@
 ##############################################################
 
 def is_prime(number):
+    if number in (0,1):
+        return False
+
     """return True if *number* is prime"""
     for element in range(2, number):
         if number % element == 0:
