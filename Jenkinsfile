@@ -4,7 +4,7 @@ node ('jslave') {
     }
 
     stage ('Build') {
-        sh 'ls -al'
+        sh 'echo "No build needed."'
     }
 
     stage ('Test') {
