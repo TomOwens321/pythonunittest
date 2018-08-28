@@ -5,7 +5,7 @@
 ##############################################################
 
 def is_prime(number):
-    if number in (0,1):
+    if number <= 1:
         return False
 
     """return True if *number* is prime"""
