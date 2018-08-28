@@ -14,5 +14,12 @@ class PrimesTestCase(unittest.TestCase):
         for number in numbers:
             self.assertTrue(is_prime(number))
 
+    def test_is_zero_not_prime(self):
+        self.assertFalse(is_prime(0))
+
+    def test_are_negatives_not_prime(self):
+        for index in range(-1, -10, -1):
+            self.assertFalse(is_prime(index), msg='{} should not be prime'.format(index))
+
 if __name__ == '__main__':
     unittest.main()
