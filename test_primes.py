@@ -9,5 +9,10 @@ class PrimesTestCase(unittest.TestCase):
     def test_is_four_prime(self):
         self.assertFalse(is_prime(4))
 
+    def test_three_primes(self):
+        numbers = [3,5,7]
+        for number in numbers:
+            self.assertTrue(is_prime(number))
+
 if __name__ == '__main__':
     unittest.main()
