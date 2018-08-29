@@ -1,5 +1,6 @@
 import unittest
-from primes import is_prime
+from unittest.mock import patch
+from primes import is_prime, next_prime
 
 class PrimesTestCase(unittest.TestCase):
     """tests for primes.py"""
@@ -20,6 +21,12 @@ class PrimesTestCase(unittest.TestCase):
     def test_are_negatives_not_prime(self):
         for index in range(-1, -10, -1):
             self.assertFalse(is_prime(index), msg='{} should not be prime'.format(index))
+
+    @patch('primes.is_prime', return_value = 5)
+    def test_next_prime(self, is_prime):
+        number = 5
+        next_prime(5)
+        is_prime.assert_called_once_with(number)
 
 if __name__ == '__main__':
     unittest.main()
