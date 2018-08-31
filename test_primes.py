@@ -22,7 +22,7 @@ class PrimesTestCase(unittest.TestCase):
         for index in range(-1, -10, -1):
             self.assertFalse(is_prime(index), msg='{} should not be prime'.format(index))
 
-    @patch('primes.is_prime', return_value = 5)
+    @patch('primes.is_prime', return_value = True)
     def test_next_prime(self, is_prime):
         number = 5
         next_prime(5)
